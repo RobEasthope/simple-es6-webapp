@@ -79,7 +79,7 @@ function siteReady() {
 // Fetch json data util function
 function initHomePage() {
   // Get the page data
-  fetch('./assets/json.txt')
+  fetch('./data/json.txt')
     // Massage the data into json format
     .then(payload => payload.json())
     // Render the home page
