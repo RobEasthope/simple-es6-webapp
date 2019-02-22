@@ -1,0 +1,180 @@
+// Hack to set footer position as it's getting late (100vh - footer and header heights).
+$content-height: calc(100vh - 50px - 56px - 4em);
+
+// Basic CSS resets
+html,
+body {
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+// Button styles reset
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  display: inline-block;
+}
+
+// General page structure
+.page-wrapper {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  flex: 0 0 auto;
+  min-height: 100vh;
+  align-content: baseline;
+  opacity: 0;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-flow: row;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-grow: 1;
+  padding: 2em 0;
+  min-height: $content-height;
+}
+
+.page-content {
+  width: 100%;
+
+  @media (min-width: 800px) {
+    width: 75%;
+  }
+
+  padding: 0 1em;
+}
+
+// Loading styles
+.loading {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  z-index: 9999;
+  display: flex;
+  flex-flow: row wrap;
+  transition: 0.4s;
+  opacity: 1;
+  align-content: center;
+
+  h1 {
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+// Inserted on body element to handle removing the loading state
+.page-ready {
+  .loading {
+    opacity: 0;
+  }
+
+  .page-wrapper {
+    opacity: 1;
+  }
+
+  .remove-loading {
+    display: none;
+  }
+}
+
+// Header
+.header {
+  position: relative;
+  width: 100%;
+  color: white;
+  background-color: #ff4136;
+  padding: 1em;
+
+  @media (min-width: 800px) {
+    text-align: center;
+  }
+
+  h1 {
+    display: inline;
+    margin: 0;
+    font-size: 21px;
+  }
+
+  // Mobile nav button
+  .open-mobile-nav {
+    position: absolute;
+    right: 1em;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    line-height: 1;
+    vertical-align: middle;
+
+    @media (min-width: 800px) {
+      display: none;
+    }
+  }
+}
+
+// Navigation styles
+.nav {
+  position: absolute;
+  transform: translateX(100%);
+  width: 100vw;
+  height: $content-height;
+  background-color: white;
+  padding: 0 1em;
+  transition: transform 0.4s;
+
+  @media (min-width: 800px) {
+    transform: translateX(0%);
+    position: relative;
+    display: block;
+    width: 25%;
+  }
+
+  .nav-link {
+    margin: 1em 0;
+  }
+
+  .nav-sublink {
+    font-size: 14px;
+    margin: 1em;
+  }
+}
+
+.menu-open {
+  transform: translateX(0%);
+}
+
+.menu-closed {
+  transform: translateX(100%);
+}
+
+// Footer styles
+.footer {
+  width: 100%;
+  color: white;
+  text-align: center;
+  background-color: #ff4136;
+  padding: 1em;
+  align-self: flex-end;
+
+  h1 {
+    margin: 0;
+  }
+}
