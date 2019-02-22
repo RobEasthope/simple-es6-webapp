@@ -9,13 +9,13 @@ if (!ROOT) {
 
 const config = {
   // Your website's name, used for favicon meta tags
-  site_name: 'simple-es6-webapp',
+  site_name: 'Simple ES6 webapp',
 
   // Your website's description, used for favicon meta tags
   site_description: 'Simple ES6 webapp',
 
   // Your website's URL, used for sitemap
-  site_url: 'http://localhost:8000/',
+  site_url: '',
 
   // Google Analytics tracking ID (leave blank to disable)
   googleAnalyticsUA: '',
