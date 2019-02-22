@@ -15,7 +15,7 @@ const config = {
   site_description: 'Simple ES6 webapp',
 
   // Your website's URL, used for sitemap
-  site_url: '',
+  site_url: 'https://simple-es6-webapp-a186a8.netlify.com',
 
   // Google Analytics tracking ID (leave blank to disable)
   googleAnalyticsUA: '',
