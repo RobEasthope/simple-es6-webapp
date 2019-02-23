@@ -119,6 +119,7 @@ function navigateToPage(e) {
   if (shortUrl === 'index.html') {
     // This needs to be rewritten to avoid unnecessary rendering with the home page specific content split out
     initHomePage();
+    toggleMobileNav();
   } else {
     fetch(`${shortUrl}`)
       .then(payload => payload.text())
