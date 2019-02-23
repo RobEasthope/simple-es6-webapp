@@ -134,6 +134,6 @@ function navigateToPage(e) {
 // INIT
 // Let the show begin
 window.onload = () => {
-  // Get json data and render the homepage after an artificial 2 second delay
-  setTimeout(initHomePage, 2000);
+  // Get json data and render the homepage after an artificial 1.5 second delay
+  setTimeout(initHomePage, 1500);
 };
