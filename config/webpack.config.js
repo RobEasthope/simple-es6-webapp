@@ -7,6 +7,7 @@ const plugins = require('./webpack.plugins');
 module.exports = {
   context: path.join(config.root, config.paths.src),
   entry: [
+    path.join(config.root, config.paths.src, 'data/json.txt'),
     path.join(config.root, config.paths.src, 'javascripts/scripts.js'),
     path.join(config.root, config.paths.src, 'stylesheets/styles.scss'),
   ],
@@ -14,9 +15,7 @@ module.exports = {
     path: path.join(config.root, config.paths.dist),
     filename: '[name].[hash].js',
   },
-  mode: ['production', 'development'].includes(config.env)
-    ? config.env
-    : 'development',
+  mode: ['production', 'development'].includes(config.env) ? config.env : 'development',
   devtool: 'cheap-eval-source-map',
   devServer: {
     contentBase: path.join(config.root, config.paths.src),

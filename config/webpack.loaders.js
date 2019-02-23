@@ -47,9 +47,7 @@ const cssLoader = {
 const postcssLoader = {
   loader: 'postcss-loader',
   options: {
-    plugins: [
-      require('autoprefixer')(),
-    ],
+    plugins: [require('autoprefixer')()],
     sourceMap,
   },
 };
@@ -136,12 +134,18 @@ const fonts = {
   ],
 };
 
-module.exports = [
-  html,
-  js,
-  css,
-  sass,
-  less,
-  images,
-  fonts,
-];
+// Font loaders
+const data = {
+  test: /\.(txt)$/,
+  use: [
+    {
+      loader: 'file-loader',
+      query: {
+        name: '[name].[ext]',
+        outputPath: 'data/',
+      },
+    },
+  ],
+};
+
+module.exports = [html, js, css, sass, less, images, fonts, data];
